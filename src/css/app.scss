@@ -1,0 +1,110 @@
+// app global css in SCSS form
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import '~assets/fonts/Gilroy/stylesheet.css';
+  @import '~assets/fonts/DinCondensed/stylesheets.css';
+
+  body {
+    @apply tw-font-gilroy tw-text-fBlack;
+  }
+  a[type=button] {
+    appearance: none;
+  }
+
+  a {
+    color: theme('colors.primary')
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button:focus {
+    outline: 0
+  }
+
+  .app-wrapper-main {
+    @apply tw-px-8 tw-py-6;
+  }
+
+  .app-wrapper-y-main {
+    @apply tw-py-6;
+  }
+
+  .app-wrapper-x-main {
+    @apply tw-px-8;
+  }
+
+  .app-title-4 {
+    font-size: 22px;
+    @apply tw-font-gilroy tw-font-bold tw-text-fBlack;
+  }
+
+  .app-title-6 {
+    color: #1a1a1a;
+    font-size: 32px;
+    @apply tw-font-gilroy tw-font-semibold;
+  }
+
+  .app-py-offsets {
+    @apply tw-py-6;
+  }
+
+  .app-opacity-4 {
+    opacity: 0.46;
+  }
+
+  .app-opacity-6 {
+    opacity: 0.6;
+  }
+
+  .text-none {
+    font-size: 0
+  }
+
+  //rounded-{10 to 22 step 2} утилита
+  @for $i from 10 through 22{
+    @if $i % 2 == 0 {
+      .rounded-#{$i} {
+        border-radius: #{$i}px;
+      }
+    }
+  }
+
+  .landing-title {
+    font-size: 29px;
+    @apply  tw-text-eBlack tw-font-gilroy tw-font-semibold;
+  }
+
+  .landing-text {
+    font-size: 15px;
+    color: #979797;
+    @apply tw-font-gilroy;
+  }
+
+  .app-hint {
+    color: #979797;
+    @apply tw-font-gilroy tw-text-xs;
+  }
+
+  .start-title {
+    font-size: 26px;
+    line-height: 34px;
+    @apply  tw-text-eBlack tw-font-gilroy tw-font-semibold;
+  }
+
+  .dashed {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #979797;
+  }
+
+  .wallet-amount {
+    color: #1A1A1A;
+    @apply tw-font-gilroy tw-font-semibold;
+  }
+}
